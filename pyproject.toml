@@ -10,6 +10,7 @@ pandas = "^1.4.3"
 fsspec = "^2022.5.0"
 gcsfs = "^2022.5.0"
 google-cloud-storage = "^2.4.0"
+black = "^22.6.0"
 
 [tool.poetry.dev-dependencies]
 
