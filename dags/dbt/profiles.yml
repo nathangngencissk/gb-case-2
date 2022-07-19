@@ -1,0 +1,10 @@
+gb_case_2:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /usr/local/airflow/gcloud/dbt/credentials.json
+      project: cool-academy-356419
+      dataset: base_vendas_dataset
+      threads: 1
