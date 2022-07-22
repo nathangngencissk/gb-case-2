@@ -62,7 +62,7 @@ x-airflow-common:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - /Users/nathan/.gcloud/credentials/cool-academy-356419-a048e5593bf2.json:/usr/local/airflow/gcloud/dbt/credentials.json
+    - /Users/nathan/.gcloud/credentials/dh-dev-357120-a98633a5d435.json:/usr/local/airflow/gcloud/dbt/credentials.json
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
