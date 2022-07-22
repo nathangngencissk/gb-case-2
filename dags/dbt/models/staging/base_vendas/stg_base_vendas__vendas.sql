@@ -1,10 +1,10 @@
--- stg_base_vendas__base_vendas.sql
+-- stg_base_vendas__vendas.sql
 
 with
 
 source as (
 
-    select * from {{ source('raw','base_vendas') }}
+    select * from {{ source('base_vendas','base_vendas') }}
 
 ),
 
@@ -24,7 +24,7 @@ renamed as (
 
         -- timestamps
         DATA_VENDA as data_venda,
-        DATA_VENDA::timestamp_ltz as created_at
+        cast(DATA_VENDA as timestamp) as created_at
 
     from source
 

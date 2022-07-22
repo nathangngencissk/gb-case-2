@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: base_vendas
+  - name: stg_base_vendas__vendas
     columns:
       - name: ID_MARCA
         description: "Id da marca."

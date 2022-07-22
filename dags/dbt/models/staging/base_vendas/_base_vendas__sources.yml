@@ -2,6 +2,8 @@ version: 2
 
 sources:
   - name: base_vendas
-    schema: raw
-    tables: 
+    schema: base_vendas_dataset
+    database: 'cool-academy-356419'
+    tables:
       - name: base_vendas
+        identifier: base_vendas
