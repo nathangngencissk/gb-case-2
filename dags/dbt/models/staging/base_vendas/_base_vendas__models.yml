@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: base_vendas
+    columns:
+      - name: ID_MARCA
+        description: "Id da marca."
+      - name: MARCA
+        description: "Nome da marca."
+      - name: ID_LINHA
+        description: "Id da linha."
+      - name: LINHA
+        description: "Nome da linha."
+      - name: DATA_VENDA
+        description: "Data da venda."
+      - name: QTD_VENDA
+        description: "Quantidade da venda."

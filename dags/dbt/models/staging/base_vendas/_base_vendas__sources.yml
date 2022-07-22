@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: base_vendas
+    schema: raw
+    tables: 
+      - name: base_vendas
