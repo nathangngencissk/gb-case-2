@@ -8,14 +8,13 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import (
 DAG_ID = "import_base_files_to_bq"
 TABLE_NAME = "base_vendas"
 DATASET_NAME = "base_vendas_dataset"
-PROJECT_ID = "cool-academy-356419"
 
 with DAG(
-        dag_id=DAG_ID,
-        schedule_interval="@once",
-        start_date=datetime(2022, 1, 1),
-        description="Full load of csv files DAG",
-        catchup=False,
+    dag_id=DAG_ID,
+    schedule_interval="@once",
+    start_date=datetime(2022, 1, 1),
+    description="Full load of csv files DAG",
+    catchup=False,
 ) as dag:
     load_csv = GCSToBigQueryOperator(
         task_id="load_csv",
