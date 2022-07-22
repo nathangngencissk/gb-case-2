@@ -1,8 +1,0 @@
-SELECT    SUM(QTD_VENDA) AS TOTAL_SALES,
-          ID_MARCA,
-          MARCA,
-          CAST(EXTRACT(YEAR FROM DATA_VENDA) AS string) AS YEAR,
-          LPAD(CAST(EXTRACT(MONTH FROM DATA_VENDA) AS string),2,'0') AS MONTH
-FROM      `base_vendas_dataset.base_vendas`
-GROUP BY  2,3,4,5
-ORDER BY  YEAR DESC, MONTH DESC, ID_MARCA ASC

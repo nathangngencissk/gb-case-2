@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: vendas_ano_mes
+    columns:
+      - name: qtd_total
+        description: "Quantidade total."
+      - name: ano
+        description: "Ano."
+      - name: mes
+        description: "Mês."
+  - name: vendas_linha_ano_mes
+    columns:
+      - name: qtd_total
+        description: "Quantidade total."
+      - name: id_linha
+        description: "Id da linha."
+      - name: nome_linha
+        description: "Nome da linha."
+      - name: ano
+        description: "Ano."
+      - name: mes
+        description: "Mês."
+  - name: vendas_marca_ano_mes
+    columns:
+      - name: qtd_total
+        description: "Quantidade total."
+      - name: id_marca
+        description: "Id da marca."
+      - name: nome_marca
+        description: "Nome da marca."
+      - name: ano
+        description: "Ano."
+      - name: mes
+        description: "Mês."
+  - name: vendas_marca_linha
+    columns:
+      - name: qtd_total
+        description: "Quantidade total."
+      - name: id_marca
+        description: "Id da marca."
+      - name: id_linha
+        description: "Id da linha."
+      - name: nome_marca
+        description: "Nome da marca."
+      - name: nome_linha
+        description: "Nome da linha."
+        
