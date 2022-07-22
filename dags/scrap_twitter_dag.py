@@ -7,7 +7,7 @@ from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
 from airflow.providers.google.cloud.hooks.secret_manager import SecretsManagerHook
 
 DAG_ID = "scrap_twitter"
-TABLE_ID = "cool-academy-356419.base_vendas_dataset.tweets_linha_dez_2019"
+TABLE_ID = "cool-academy-356419.twitter.tweets_linha_dez_2019"
 SECRET_ID = "TWITTER_TOKEN"
 
 
@@ -43,11 +43,11 @@ def get_linha():
     cursor = conn.cursor()
     cursor.execute(
         """
-        SELECT    LINHA
-        FROM      `base_vendas_dataset.agg_vendas_linha_ano_mes`
-        WHERE     MONTH = '12'
-        AND       YEAR = '2019'
-        ORDER BY  TOTAL_SALES DESC
+        SELECT    nome_linha
+        FROM      `dh-dev-357120.dev_core.vendas_linha_ano_mes`
+        WHERE     mes = '12'
+        AND       ano = '2019'
+        ORDER BY  qtd_total DESC
         LIMIT     1;
     """
     )
@@ -56,11 +56,11 @@ def get_linha():
 
 
 with DAG(
-        dag_id=DAG_ID,
-        schedule_interval="@once",
-        start_date=datetime(2022, 1, 1),
-        description="Scrap twitter DAG",
-        catchup=False,
+    dag_id=DAG_ID,
+    schedule_interval="@once",
+    start_date=datetime(2022, 1, 1),
+    description="Scrap twitter DAG",
+    catchup=False,
 ) as dag:
     get_linha_task = PythonOperator(task_id="get_linha", python_callable=get_linha)
 
